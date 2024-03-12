@@ -45,7 +45,7 @@ Param(
 $cursor = [System.Windows.Forms.Cursor]
 $initialPosition = $null
 switch( $PSCmdlet.ParameterSetName ){
-	'hourMinute' 	{ $endDateTime = (Get-Date).AddHours($hours).AddMinutes($minutes) }
+	'hourMinute'	{ $endDateTime = (Get-Date).AddHours($hours).AddMinutes($minutes) }
 	'until'			{ $endDateTime = (Get-Date $until) }
 }
 $initialDuration = ( $endDateTime - (Get-Date) )
