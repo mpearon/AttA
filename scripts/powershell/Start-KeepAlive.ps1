@@ -37,7 +37,7 @@
 [CmdletBinding( DefaultParameterSetName = 'until' )]
 Param(
 	[Parameter( ParameterSetName = 'hourMinute' )][double]$hours = 0,
-    [Parameter( ParameterSetName = 'hourMinute' )][double]$minutes = 0,
+	[Parameter( ParameterSetName = 'hourMinute' )][double]$minutes = 0,
 	[Parameter( ParameterSetName = 'until' )]$until,
 	[switch]$quickPoll
 )
@@ -70,7 +70,7 @@ Do{
 	}
 	$initialPosition = $cursor::Position
 	$timeRemaining = ($endDateTime - ( Get-Date ))
-    $complete = ((($timeRemaining).totalMilliseconds) / (($initialDuration).totalMilliseconds))*100
-    Write-Progress -PercentComplete $complete -SecondsRemaining $timeRemaining.totalSeconds -Activity ('Countdown {0}' -f $action)
+	$complete = ((($timeRemaining).totalMilliseconds) / (($initialDuration).totalMilliseconds))*100
+	Write-Progress -PercentComplete $complete -SecondsRemaining $timeRemaining.totalSeconds -Activity ('Countdown {0}' -f $action)
 }
 While( (Get-Date) -lt $endDateTime )
