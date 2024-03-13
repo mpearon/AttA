@@ -61,7 +61,7 @@ Do{
 		}
 		Start-Sleep -Seconds 60
 	}
-	if( $cursor::Position -ne $initialPosition ){
+	if( $cursor::Position -eq $initialPosition ){
 		[System.Windows.Forms.SendKeys]::SendWait("{F14}")
 		$action = '+'
 	}
